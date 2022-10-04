@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Matt Smith Tribute Page</title>
+
+    <!-- Script needed for the div fade in effect -->
+
+    <!-- This script essentially looks for anything with a class of .reveal
+    and stores it in a dynamic array.  It attaches a listener (as they are known, especially in Java)
+    for when the user scrolls.  Should anything with a .reveal class be exposed, the animation as defined
+    in the CSS with then activate and the div have its visibility revealed. -->
+    <script>
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          } else {
+            reveals[i].classList.remove("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+    </script>
+
+  </head>
+
+  <!-- Entry Point -->
+  <body>
+
+    <!-- Main container that houses all elements -->
+    <main id="main">
+      <div id="primary-container">
+
+        <!-- The primary landing entry point -->
+        <section id="landing-section">
+          <div id="img-div">
+
+            <!-- This part frustrated me that they wanted the height set too auto lol -->
+            <img alt="Matt Smith tipping his hat." id="image" src="https://wallpaperaccess.com/full/4110412.jpg">
+            <figcaption id="img-caption">Matt Smith of Doctor Who</figcaption>
+            <div class="landing-background-container">
+              <h1 id="title">
+                <span class="pop">M</span>att <span class="pop">S</span>mith
+              </h1>
+            </div>
+            <div>
+
+              <!-- Navigation links, on a final project I would implement smooth scrolling so it is not as jerky. -->
+              <nav>
+                <ul>
+                  <li>
+                    <a href="#about-matt-smith"><span class="pop-two">A</span>bout</a>
+                  </li>
+                  <li>
+                    <a href="#career-matt-smith"><span class="pop-two">C</span>areer</a>
+                  </li>
+                  <li>
+                    <a href="https://en.wikipedia.org/wiki/Matt_Smith"><span class="pop-two">W</span>iki</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </section>
+
+        <!-- The tribute info, aka About Matt Smith entry point. -->
+        <section class="reveal" id="tribute-info">
+          <div id="about-matt-smith" class="container">
+            <div id="photo" class="grid-photo-left">
+              <img alt="Matt Smith standing wearing black, smart clothing." id="sidebar-image" src="https://64.media.tumblr.com/91b63a0904879e004869b6ef2c156dde/tumblr_o2zpeq2BOg1u74ofoo1_1280.jpg">
+            </div>
+            <div id="about" class="grid-text-right">
+              <h2>About Matt Smith</h2>
+              <p>
+                <span class="firstcharacter">M</span>atthew Robert Smith (born 28 October 1982) is an English actor. He is best known for his roles as the eleventh incarnation of the Doctor in the BBC series Doctor Who (2010–2013), Daemon Targaryen in the HBO series House of the Dragon (2022–present) and Prince Philip in the Netflix series The Crown (2016–2017), the latter of which earned him a Primetime Emmy Award nomination. <br>
+                <br> Smith initially aspired to be a professional footballer, but spondylolysis forced him out of the sport. After joining the National Youth Theatre and studying drama and creative writing at the University of East Anglia, he became an actor in 2003, performing in plays including Murder in the Cathedral, Fresh Kills, The History Boys and On the Shore of the Wide World in London theatres. Extending his repertoire into West End theatre, he has since performed in the stage adaptation of Swimming with Sharks with Christian Slater, followed a year later by a critically acclaimed performance as Henry in That Face. <br>
+                <br> Smith's first television role came in 2006 as Jim Taylor in the BBC adaptations of Philip Pullman's The Ruby in the Smoke and The Shadow in the North, while his first major role in television came as Danny in the 2007 BBC series Party Animals. Smith portrayed the eleventh incarnation of the Doctor in Doctor Who from 2010 to 2013, becoming the youngest person to portray the character. In film, he portrayed a dual role in Womb (2010), the physical forms of Skynet in Terminator Genisys (2015), 1960s pimp Jack in Last Night in Soho (2021), and Milo in Morbius (2022).
+              </p>
+              <br>
+              <br>
+              <p class="right-text">Source: <a id="tribute-link" target="_blank" href="https://en.wikipedia.org/wiki/Matt_Smith">Wiki</a>
+              </p>
+              <div class="bottom-line">
+                <img alt="A simple line decoration." class="line" src="https://i.postimg.cc/qM5Zg9CN/pinpng-com-wedding-vector-design-png-386341.png">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- The Matt Smith Timeline. -->
+
+        <!-- For this part I actually followed a tutorial, as I knew how I wanted it to
+          look, but was just 100% sure of the execution.  The tutorial was quite
+          lengthy.  Also, this matter was being touched on in my external bootcamp as
+          well.  If given some more time I would have continued with this as it is not
+          100% pixel perfect, which will probably only drive me crazy and nobody else,
+          but I see those few pixels and they will forever haunt my dreams. -->
+        <section class="reveal">
+          <div id="career-matt-smith" class="container-left">
+            <div id="photo" class="grid-photo-right">
+              <img id="sidebar-image" alt="Matt Smith staring into the distance." src="https://64.media.tumblr.com/28ba1e243ec3c49859e3308fd27044b8/tumblr_o2zpccwflN1u74ofoo1_1280.jpg">
+            </div>
+            <div id="about" class="grid-text-left">
+              <h2>Matt Smith's Career</h2>
+              <div class="timeline">
+                <ul>
+                  <li>
+                    <div class="content">
+                      <h3>The Ruby in the Smoke</h3>
+                      <p>In Victorian England, a young woman searches for a priceless ruby and uncovers even greater mysteries.</p>
+                    </div>
+                    <div class="point"></div>
+                    <div class="date">
+                      <h4>2006</h4>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="content">
+                      <h3>Party Animals</h3>
+                      <p>Follows the lives of several young adults whose lives intertwine with their jobs in the Parliment of the United Kingdom.</p>
+                    </div>
+                    <div class="point"></div>
+                    <div class="date">
+                      <h4>2007</h4>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="content">
+                      <h3>Doctor Who: The Eleventh Doctor</h3>
+                      <p>The further adventures in time and space of the alien adventurer known as the Doctor and their companions from planet Earth.</p>
+                    </div>
+                    <div class="point"></div>
+                    <div class="date">
+                      <h4>2010</h4>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="content">
+                      <h3>House of the Dragon</h3>
+                      <p>House of the Dragon tells the story of an internal succession war within House Targaryen at the height of its power, 172 years before the birth of Daenerys Targaryen.</p>
+                    </div>
+                    <div class="point"></div>
+                    <div class="date">
+                      <h4>2022</h4>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- If you have made it this far, thank you for your time
+        that you have taken reviewing my code.  Now, on to the CSS. -->
+      </div>
+    </main>
+  </body>
+</html>
